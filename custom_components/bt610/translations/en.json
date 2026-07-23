@@ -15,5 +15,27 @@
       "no_devices_found": "No BT610 devices found. The device does not advertise while the Sentrius app is connected to it.",
       "already_configured": "Device is already configured"
     }
+  },
+  "entity": {
+    "sensor": {
+      "current_1": {"name": "Current 1"},
+      "current_2": {"name": "Current 2"},
+      "current_3": {"name": "Current 3"},
+      "current_4": {"name": "Current 4"},
+      "temperature": {"name": "Temperature"},
+      "temperature_1": {"name": "Temperature 1"},
+      "temperature_2": {"name": "Temperature 2"},
+      "temperature_3": {"name": "Temperature 3"},
+      "temperature_4": {"name": "Temperature 4"},
+      "battery_voltage": {"name": "Battery voltage"},
+      "voltage_1_raw": {"name": "Voltage 1 (raw)"},
+      "voltage_2_raw": {"name": "Voltage 2 (raw)"},
+      "voltage_3_raw": {"name": "Voltage 3 (raw)"},
+      "voltage_4_raw": {"name": "Voltage 4 (raw)"},
+      "ultrasonic_raw": {"name": "Ultrasonic (raw)"},
+      "pressure_1_raw": {"name": "Pressure 1 (raw)"},
+      "pressure_2_raw": {"name": "Pressure 2 (raw)"},
+      "rssi": {"name": "RSSI"}
+    }
   }
 }
