@@ -33,9 +33,10 @@ def auto_mock_bluetooth(mock_bluetooth):
 
 
 def make_service_info(payload: bytes = GOLDEN, address: str = ADDRESS,
-                      name: str = "BT610", rssi: int = -67) -> BluetoothServiceInfo:
+                      name: str = "BT610", rssi: int = -67,
+                      source: str = "AA:BB:CC:DD:EE:FF") -> BluetoothServiceInfo:
     return BluetoothServiceInfo(
         name=name, address=address, rssi=rssi,
         manufacturer_data={119: payload}, service_data={}, service_uuids=[],
-        source="AA:BB:CC:DD:EE:FF",
+        source=source,
     )
