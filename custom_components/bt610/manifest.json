@@ -8,12 +8,12 @@
       "connectable": false
     }
   ],
-  "codeowners": ["@naak"],
+  "codeowners": ["@hongell"],
   "config_flow": true,
   "dependencies": ["bluetooth_adapters"],
-  "documentation": "https://github.com/naak/ha-bt610",
+  "documentation": "https://github.com/hongell/ha-bt610",
   "integration_type": "device",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/naak/ha-bt610/issues",
+  "issue_tracker": "https://github.com/hongell/ha-bt610/issues",
   "version": "0.1.0"
 }

@@ -19,7 +19,7 @@ A Home Assistant custom integration for the [Laird/Ezurio Sentrius BT610](https:
 ### Via HACS (recommended)
 
 1. HACS → the three-dot menu → **Custom repositories**.
-2. Add `https://github.com/naak/ha-bt610` as an **Integration**.
+2. Add `https://github.com/hongell/ha-bt610` as an **Integration**.
 3. Find "Laird BT610" in HACS and install it.
 4. Restart Home Assistant.
 5. The device is discovered automatically once it advertises within range of a Bluetooth proxy or adapter. If it doesn't show up as a discovery, add it manually: **Settings → Devices & Services → Add Integration → Laird BT610**.
