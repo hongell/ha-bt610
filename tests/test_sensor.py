@@ -59,6 +59,23 @@ async def test_battery_scaled_to_volts(hass: HomeAssistant):
     assert float(state.state) == pytest.approx(3.6)
 
 
+async def test_battery_good_and_bad_share_entity(hass: HomeAssistant):
+    entry, cb, _ = await _setup(hass, {})
+    cb(make_service_info(payload=build_frame(record_type=16, value=3200.0)), None)
+    await hass.async_block_till_done()
+    state = hass.states.get("sensor.bt610_battery_voltage")
+    assert float(state.state) == pytest.approx(3.2)
+    cb(make_service_info(payload=build_frame(
+        record_type=12, record_number=2, value=3600.0)), None)
+    await hass.async_block_till_done()
+    state = hass.states.get("sensor.bt610_battery_voltage")
+    assert float(state.state) == pytest.approx(3.6)
+    registry = er.async_get(hass)
+    ids = [e for e in registry.entities.values() if e.config_entry_id == entry.entry_id
+           and e.unique_id.endswith("-battery_voltage")]
+    assert len(ids) == 1
+
+
 async def test_persisted_types_restored_at_setup(hass: HomeAssistant):
     entry, cb, _ = await _setup(hass, {CONF_SEEN_EVENT_TYPES: [26, 27]})
     assert hass.states.get("sensor.bt610_current_1") is not None

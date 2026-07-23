@@ -7,9 +7,10 @@ A Home Assistant custom integration for the [Laird/Ezurio Sentrius BT610](https:
 - **Passive advertisement parsing** — reads the BT610's manufacturer-specific BLE advertisements via Home Assistant's Bluetooth stack. No active connection to the device is made or required.
 - **Dynamic sensors per configured channel** — entities are created on the fly as the integration observes advertisement record types from the device, so only the channels you have actually configured on the BT610 show up:
   - Current, channels 1–4 (A)
-  - Temperature (°C)
+  - Temperature, channels 1–4, plus the base temperature record (°C)
   - Battery voltage (V)
 - **Raw sensors (disabled by default)** — voltage, ultrasonic, and pressure channels are exposed as raw, unitless values because their scaling has not yet been verified against real hardware. They can be enabled manually in the entity settings once you've confirmed the conversion for your channel configuration.
+- **RSSI diagnostic sensor (disabled by default)** — the received signal strength of the last advertisement, exposed as a diagnostic entity. Can be enabled manually in the entity settings.
 - **Bluetooth discovery** — the device is found automatically as soon as a proxy/adapter sees its advertisements; it can also be added manually.
 - **Diagnostics** — config entry diagnostics download with the device MAC address and any embedded MACs in captured frames redacted.
 

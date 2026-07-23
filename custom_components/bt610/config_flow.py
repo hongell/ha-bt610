@@ -63,7 +63,9 @@ class Bt610ConfigFlow(ConfigFlow, domain=DOMAIN):
             if _validate(info)
         }
         if user_input is not None:
-            info = candidates[user_input[CONF_ADDRESS]]
+            info = candidates.get(user_input[CONF_ADDRESS])
+            if info is None:
+                return self.async_abort(reason="no_devices_found")
             await self.async_set_unique_id(
                 format_mac(info.address), raise_on_progress=False)
             self._abort_if_unique_id_configured()
