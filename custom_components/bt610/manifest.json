@@ -1,0 +1,19 @@
+{
+  "domain": "bt610",
+  "name": "Laird BT610",
+  "codeowners": ["@naak"],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/naak/ha-bt610",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/naak/ha-bt610/issues",
+  "bluetooth": [
+    {
+      "manufacturer_id": 119,
+      "manufacturer_data_start": [1, 0],
+      "connectable": false
+    }
+  ],
+  "version": "0.1.0"
+}
